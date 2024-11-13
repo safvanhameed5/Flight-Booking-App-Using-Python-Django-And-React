@@ -1,0 +1,93 @@
+/* ListFlights.css */
+.title {
+    margin: 40px 700px;
+}
+
+.list-main {
+  margin: 50px;
+}
+
+.loc-icon {
+  padding-left: 8px;
+  color: rgb(203, 1, 1);
+  font-size: 13px;
+}
+
+.flight-card {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    background-color: white;
+    height: 60px;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 8px 140px;
+  }
+  
+.section-a {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+  }
+
+.section-b {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+  }
+
+.section-c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0.5;
+  }
+
+.section-d {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    background-color: #6c3baa; /* Set the background color to violet */ 
+    color: white;
+    font-weight: bold;/* Set the text color to white */
+    padding: 10px 20px; /* Add padding for a better button appearance */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Round the corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.soldout {
+  display: flex;
+  flex-direction: column;
+  background-color: #200e01; /* Set the background color to violet */ 
+  color: white;
+  font-weight: bold;/* Set the text color to white */
+  padding: 10px 20px; /* Add padding for a better button appearance */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Round the corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.soldout:hover {
+  background-color: #3f3f3f;
+}
+
+/* Optional: Change background color on hover */
+.btn:hover {
+    background-color: #532c85; /* Darker shade on hover */
+}
+
+.shade {
+  color: gray;
+}
+
+
+  
