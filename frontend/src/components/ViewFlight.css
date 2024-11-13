@@ -1,0 +1,214 @@
+body {
+    background-color: whitesmoke;
+    padding: 10px 10px;
+}
+.main-div {
+    width: 50%;
+    height: 500px;
+    background-color: white;
+    margin: 20px 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.route {
+    font-size: larger;
+}
+
+.flight-icon {
+    padding-left: 7px;
+    transform: rotate(25deg);
+    color: rgb(61, 115, 250);
+}
+
+.route-icon {
+    padding-left: 15px;
+}
+
+.price-container {
+    width: 25%;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.offers {
+    width: 20%;
+    height: 250px;
+    background-color: white;
+    margin: 20px 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-btn {
+    padding: 0px 20px; /* Add padding for a better button appearance */
+}
+
+.btn-confirm {
+    display: flex;
+    width: 130px;
+    height: 45px;
+    flex-direction: column;
+    background-color: #6c3baa; /* Set the background color to violet */ 
+    color: white;
+    padding: 10px 15px; /* Add padding for a better button appearance */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Round the corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.btn-text {
+    display: flex;
+    padding-top: 2px;
+    padding-left: 15px;
+    font-size: medium;
+}
+
+.continue-right {
+    padding-left: 5px;
+}
+
+.fare-summary {
+    font-size: large;
+}
+
+
+.one, .two, .three, .four {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+    flex: 0.1;
+}
+
+.off-1, .off-2, .off-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+    flex: 0.1;
+}
+
+.four-two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    gap: 100px;
+    flex: 0.1;
+}
+
+.five {
+    margin-top: 20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    flex: 0.1;
+}
+
+.refund-text {
+    font-weight: 500;
+    color: rgb(52, 143, 55);;
+}
+
+.sub-price {
+    font-weight: 500;
+}
+
+.main-price {
+    font-size: larger;
+}
+
+.line {
+    font-weight: 500;
+    color: red;
+}
+
+.outer {
+    display: flex;
+}
+
+.contain {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.5;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
+
+.flight-title {
+    display: flex;
+}
+
+.foot-btn {
+    width: 70%;
+    padding: 65px;
+    position: relative;
+    padding-top: 9px;
+    padding-right: 20px;
+}
+
+.foot-price {
+    width: 30%;
+    padding: 20px;
+    font-size: larger;
+}
+
+.footer {
+    display: flex;
+    gap: 400px;
+    background-color: white;
+    flex: 1;
+    position: fixed;
+    margin-top: 40.5%;
+    margin-left: 390px;
+    width: 46.5%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 95px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
