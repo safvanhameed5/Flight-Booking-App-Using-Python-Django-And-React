@@ -1,7 +1,10 @@
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from .models import Flight, Ticket, User
+from rest_framework.permissions import AllowAny
+from django.contrib.auth import authenticate, login, logout
+from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import FlightSerializer, TicketSerializer, UserSerializer
 
 # Create your views here.
@@ -9,12 +12,6 @@ from .serializers import FlightSerializer, TicketSerializer, UserSerializer
 def flight_list(request):
     if request.method == 'GET':
         # Retrieve all flights, regardless of status
-        flights = Flight.objects.all()
-        serializer = FlightSerializer(flights, many=True)
-        
-        # Group flights by status in the JSON response
-        available_flights = [flight for flight in serializer.data if flight['status'] == 'AVAILABLE']
-        full_flights = [flight for flight in serializer.data if flight['status'] == 'FULL']
         complete_flights = serializer.data
         
         response_data = {
@@ -58,3 +55,20 @@ def flight_detail(request, flight_number):
         # Delete the flight
         flight.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def login_user(request):
+    if request.method == 'POST':
+        username = request.data.get('username')
+        password = request.data.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+                'username': user.username,
+            })
+        else:
+            return Response({'error': 'Invalid credentials'}, status=400)
