@@ -72,3 +72,19 @@ def login_user(request):
             })
         else:
             return Response({'error': 'Invalid credentials'}, status=400)
+
+@api_view(['POST'])
+def register(request):
+    username = request.data.get('username')  # Get the username from the request
+    email = request.data.get('email')
+    password = request.data.get('password')
+
+    # Validate inputs
+    if not username or not email or not password:
+        return Response({'error': 'Username, email, and password are required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Check if the username or email is already registered
+    if User.objects.filter(username=username).exists():
+        return Response({'error': 'Username is already taken.'}, status=status.HTTP_400_BAD_REQUEST)
+    if User.objects.filter(email=email).exists():
+        return Response({'error': 'Email is already registered.'}, status=status.HTTP_400_BAD_REQUEST)
