@@ -11,7 +11,11 @@ from .serializers import FlightSerializer, TicketSerializer, UserSerializer
 @api_view(['GET', 'POST'])
 def flight_list(request):
     if request.method == 'GET':
-        # Retrieve all flights, regardless of status
+        flights = Flight.objects.all()
+        serializer = FlightSerializer(flights, many=True)
+        
+        available_flights = [flight for flight in serializer.data if flight['status'] == 'AVAILABLE']
+        full_flights = [flight for flight in serializer.data if flight['status'] == 'FULL']
         complete_flights = serializer.data
         
         response_data = {
